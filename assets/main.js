@@ -1,18 +1,18 @@
 import { livres } from "./livres.js";
-
+import { Librairie } from "./librairie.js";
 (function(){
 
-    /** Récuperer la section dédier au livres */
+    //** Récuperer la section dédier au livres */
 
     let section = document.querySelector('section');
+
 
     //** boucler pour récuperer les 12 premiers livres  */
 
     for (let i = 0, l = livres.length; i <= 11; i++) {
         let livre = livres[i];
 
-
-        /**Création du dom*/
+        //**Création du dom*/
 
         let dom = 
         `
@@ -21,7 +21,7 @@ import { livres } from "./livres.js";
                 <img src="${livre.image}" alt="">
             </div>
             <div class="container-livre-info">
-                <p>${livre.titre}</p>
+                <p data-livre-titre="${livre.titre}">${livre.titre}</p>
                 <div class="container-livre-prix-ajouter">
                     <p>${livre.prix} $</p>
                     <input type="button" value="Ajouter">
@@ -30,10 +30,7 @@ import { livres } from "./livres.js";
         </div>
         `;
 
-        // Insèrtion du code HTML directement dans la section
-
         section.innerHTML += dom;
-     
-    }   
-
+    }  
+    let librairie = new Librairie();
 })();

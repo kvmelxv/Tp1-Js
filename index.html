@@ -6,6 +6,7 @@
 
     <!-- Links -->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 
     <!-- Scripts -->
     <script type="module" src="./assets/main.js" defer></script>
@@ -15,21 +16,37 @@
 <body>
     <header>
         <h1>Tp-1 / Librairie</h1>
+        <div>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
     </header>
     <main>
         <aside>
+            <h1>Filtres</h1>
             <div>
-                <p>Tous</p>
-                <p>Nouveautés</p>
-                <p>Littérature</p>
-                <p>Art de vivre</p>
-                <p>BD, Jeunesse, Humour</p>
-                <p>Culture et société</p>
-                <p>Loisirs, Tourismes, Nature</p>
-                <p>Savoir et science</p>
+                <button type="button" data-js ="Tous">Tous</button>
+                <button type="button" data-js ="Nouveautés">Nouveautés</button>
+                <button type="button" data-js ="Littérature">Littérature</button>
+                <button type="button" data-js ="Art de vivre">Art de vivre</button>
+                <button type="button" data-js ="BD, Jeunesse, Humour">BD, Jeunesse, Humour</button>
+                <button type="button" data-js ="Culture et société">Culture et société</button>
+                <button type="button" data-js ="Loisirs, Tourismes, Nature">Loisirs, Tourismes, Nature</button>
+                <button type="button" data-js ="Savoir et science">Savoir et science</button>
             </div>
         </aside>
         <section></section>
+        <div class="modal modal--ferme" data-js-modal>
+			<div class="modal__contenu">
+                <button class="modal__ferme"><h2>x</h2></button>
+
+				<div class="modal__image-wrapper">
+					<img src="./assets/img/17-equations-qui-ont-change-le-monde.jpeg" class="modal__image">
+				</div>
+				<div class="modal__affichage-info">
+                    
+                </div>
+			</div>
+		</div>
     </main>
 </body>
 </html>
