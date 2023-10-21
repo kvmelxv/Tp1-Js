@@ -24,7 +24,7 @@ import { Librairie } from "./librairie.js";
                 <p data-livre-titre="${livre.titre}">${livre.titre}</p>
                 <div class="container-livre-prix-ajouter">
                     <p>${livre.prix} $</p>
-                    <input type="button" value="Ajouter">
+                    <input type="button" value="Ajouter" data-js-remove="CleAjout">
                 </div>
             </div>
         </div>
@@ -32,5 +32,6 @@ import { Librairie } from "./librairie.js";
 
         section.innerHTML += dom;
     }  
+
     let librairie = new Librairie();
 })();

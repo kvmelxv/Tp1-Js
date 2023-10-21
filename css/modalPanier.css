@@ -1,0 +1,53 @@
+.modalPanier {
+    display: flex;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    width: 20%;
+    height: fit-content;
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: auto; 
+  }
+  
+  .modalPanier--ouvert {
+    display: flex;
+    top: 16%; 
+    right: 5.3%;
+  }
+
+  .modalPanier--ferme {
+    display: none;
+  }
+
+  .modalPanier__contenu {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5em;
+  }
+  
+  .modalPanier__affichage-info {
+    display: flex;
+    flex-flow: row;
+    gap: 10%;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5em;
+  }
+
+  .livre > h4 {
+    margin-bottom: 0.7em;
+    text-decoration: underline;
+  }
+
+  .prix > h4 {
+    margin-bottom: 0.7em;
+    text-decoration: underline;
+  }
+ 
+  .fas.fa-shopping-cart {
+    cursor: pointer; 
+    position: relative; 
+  }

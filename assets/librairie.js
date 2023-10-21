@@ -4,6 +4,12 @@ import { livres } from "./livres.js";
 export class Librairie {
 
     constructor() {
+
+        //** header */
+        this._header = document.querySelector('header');
+        this._BtnPanier = this._header.querySelector('div');
+    
+        //** Aside */
         this._aside = document.querySelector('aside');
         this._div = this._aside.querySelector('div');
         this._btnTous = this._div.querySelector('button[data-js="Tous"]');
@@ -15,12 +21,16 @@ export class Librairie {
         this._btnLTN = this._div.querySelector('button[data-js="Loisirs, Tourismes, Nature"]');
         this._btnSavSci = this._div.querySelector('button[data-js="Savoir et science"]');
 
+        //** Section */
         this._section = document.querySelector('section');
         this._elsLivreInitial = this._section.querySelectorAll('[data-js-livre]');
         
+        //** Modal */
         this._elModal = document.querySelector('[data-js-modal]');
-        this._elH4 = this._elModal.querySelectorAll('h4');
         this._btnFerme = this._elModal.querySelector('button');
+
+        //** Modal Panier */
+        this._elModalPanier= document.querySelector('[data-js-modal-panier]');
 
         this._elHTML = document.documentElement;
         this._elBody = document.body;
@@ -30,7 +40,7 @@ export class Librairie {
         this.init();
     }
 
-    
+    //** Methode qui affiche le modal du livre */
     afficheModal(index){
         this._elModal.classList.replace('modal--ferme', 'modal--ouvert');  
 
@@ -80,6 +90,7 @@ export class Librairie {
 
     }
 
+    //** Methode qui supprime le modal du livre */
     supprimeModal(){
         this._elModal.classList.replace('modal--ouvert', 'modal--ferme'); 
 
@@ -87,7 +98,33 @@ export class Librairie {
         this._elBody.classList.remove('overflow-y-hidden');
     }
 
+    //** Methode qui affiche le modal du panier */
+    afficheModalPanier() {
+        this._elModalPanier.classList.replace('modalPanier--ferme', 'modalPanier--ouvert');
+    
+    }
+
+    //** Methode qui supprime le modal du panier */
+    suppriemModalPanier() {
+        this._elModalPanier.classList.replace('modalPanier--ouvert', 'modalPanier--ferme');
+    
+    }
+
+
     init() {
+
+
+        //** Gestionnaire d'evenement pour le Panier */
+        this._BtnPanier.addEventListener('click', () => {
+            
+            if (this._elModalPanier.classList.contains('modalPanier--ferme')){
+                this.afficheModalPanier();
+            }else {
+                this.suppriemModalPanier();
+            }
+
+        });
+
 
         //** Gestionnaire d'evenement pour les 12 premier livres [Div] */
         this._elsLivreInitial.forEach((div) => {
