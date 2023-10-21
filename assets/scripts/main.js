@@ -1,5 +1,5 @@
-import { livres } from "./livres.js";
-import { Librairie } from "./librairie.js";
+import { livres } from "../scripts/livres.js";
+import { Librairie } from "../scripts/librairie.js";
 (function(){
 
     //** Récuperer la section dédier au livres */

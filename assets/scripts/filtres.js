@@ -1,4 +1,4 @@
-import { livres } from "./livres.js";
+import { livres } from "../scripts/livres.js";
 
 export class Filtres {
     constructor() {

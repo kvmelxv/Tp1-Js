@@ -1,5 +1,5 @@
-import { Filtres } from "./filtres.js";
-import { livres } from "./livres.js";
+import { Filtres } from "../scripts/filtres.js";
+import { livres } from "../scripts/livres.js";
 
 export class Librairie {
 
